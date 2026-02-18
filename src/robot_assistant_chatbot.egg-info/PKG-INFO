@@ -1,0 +1,25 @@
+Metadata-Version: 2.4
+Name: robot-assistant-chatbot
+Version: 0.1.0
+Summary: Add your description here
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+Requires-Dist: assemblyai>=0.52.0
+Requires-Dist: beautifulsoup4>=4.14.3
+Requires-Dist: chromadb>=1.5.0
+Requires-Dist: dotenv>=0.9.9
+Requires-Dist: langchain>=1.2.10
+Requires-Dist: langchain-community>=0.4.1
+Requires-Dist: langchain-groq>=1.1.2
+Requires-Dist: langchain-huggingface>=1.2.0
+Requires-Dist: langchain-openai>=1.1.9
+Requires-Dist: langgraph>=1.0.4
+Requires-Dist: numpy>=2.3.5
+Requires-Dist: pyaudio>=0.2.14
+Requires-Dist: pydub>=0.25.1
+Requires-Dist: pypdf>=6.7.0
+Requires-Dist: requests>=2.32.5
+Requires-Dist: gradio>=3.45.0
+Requires-Dist: sentence-transformers>=2.2.2
+
+# robot-assistant-chatbot

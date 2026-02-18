@@ -1,0 +1,16 @@
+README.md
+pyproject.toml
+src/__init__.py
+src/models.py
+src/scrapping.py
+src/workflow.py
+src/robot_assistant_chatbot.egg-info/PKG-INFO
+src/robot_assistant_chatbot.egg-info/SOURCES.txt
+src/robot_assistant_chatbot.egg-info/dependency_links.txt
+src/robot_assistant_chatbot.egg-info/requires.txt
+src/robot_assistant_chatbot.egg-info/top_level.txt
+src/services/__init__.py
+src/services/llm.py
+src/services/memory.py
+src/services/rag.py
+src/services/stt.py
