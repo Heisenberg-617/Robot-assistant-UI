@@ -1,0 +1,42 @@
+[
+  {
+    "role": "user",
+    "text": "How long is the engineering program at EMINES?",
+    "ts": "2026-03-12T14:22:12.339942"
+  },
+  {
+    "role": "assistant",
+    "text": "The engineering program (the **Engineering Cycle**) at EMINES lasts **three years**. This threeÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¹Ãƒâ€¦Ã¢â‚¬Å“year cycle follows either the Integrated Preparatory Cycle, a scientific preparatory class, or a scientific licence.",
+    "ts": "2026-03-12T14:22:12.340418"
+  },
+  {
+    "role": "user",
+    "text": "Can you take me to the cafeteria?",
+    "ts": "2026-03-12T14:30:53.365829"
+  },
+  {
+    "role": "assistant",
+    "text": "IÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢ve sent the navigation request to the robot. It should head straight to the cafeteria now. Let me know if you need anything else!",
+    "ts": "2026-03-12T14:30:53.366339"
+  },
+  {
+    "role": "user",
+    "text": "Can you take me to the cafeteria?",
+    "ts": "2026-03-12T14:36:02.203599"
+  },
+  {
+    "role": "assistant",
+    "text": "The robot is on its way to the cafeteria. Let me know if you need any other assistance!",
+    "ts": "2026-03-12T14:36:02.204030"
+  },
+  {
+    "role": "user",
+    "text": "What is EMINES?",
+    "ts": "2026-03-12T14:36:47.929277"
+  },
+  {
+    "role": "assistant",
+    "text": "**EMINES – School of Industrial Management (École des Mines de Rabat‑Safi)**  \n\nEMINES is a higher‑education institution that trains industrial managers and engineers for the modern, complex business environment—particularly in Morocco and across Africa. It combines solid scientific and technical foundations with management and entrepreneurship skills, preparing graduates to work for national and African companies or to launch their own ventures.\n\n### Key Features\n| Aspect | Details |\n|--------|---------|\n| **Mission** | Train managers with strong scientific/technical knowledge and entrepreneurial know‑how; develop research programs aligned with national and continental industrial needs. |\n| **Programs Offered** | • **Integrated Preparatory Cycle** – 2 years (open after the baccalaureate).<br>• **Engineering Cycle** – 3 years (after a scientific preparatory class, a scientific licence, or the Integrated Preparatory Cycle).<br>• **Specialized Master’s (co‑granted with MINES ParisTech)** – 1 year (open after a BAC + 4/5 or relevant professional experience).<br>• **Industrial PhD** – 4 years (open after a BAC + 5). |\n| **Governance** | • **School Board** – staff, student reps, and external experts set educational and scientific policy.<br>• **Pedagogical Committee** – teachers‑researchers and students design academic programs.<br>• **Committee of Studies** – validates admissions, results, and diplomas. |\n| **Focus Areas** | Industrial management, engineering, research, entrepreneurship, and collaboration with industry partners. |\n| **Affiliations** | Partnered with the prestigious **École des Mines de Paris (MINES ParisTech)** for the Specialized Master’s program. |\n\nIn short, EMINES is a multidisciplinary school that blends engineering, management, and research to produce graduates capable of leading and innovating in industrial sectors throughout Morocco and the broader African continent.",
+    "ts": "2026-03-12T14:36:47.929876"
+  }
+]

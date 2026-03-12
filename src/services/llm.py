@@ -51,13 +51,14 @@ class LLMService:
                 [f"{doc.page_content}" for doc in docs]
             )
     
-        @tool("navigation_tool", args_schema=LocationInput, return_schema=CoordonatesOutput)
+        @tool("navigation_tool", args_schema=LocationInput)
         def navigation_tool(location_name: str) -> CoordonatesOutput:
             """
             Connect to ROS API and send coordinates of the user-requested location.
             Uses fuzzy matching to handle variations in naming.
             """
-            latitude, longitude = NavigationService.get_coordinates(location_name)
+            nav_service = NavigationService()
+            latitude, longitude = nav_service.get_coordinates(location_name)
 
             if latitude is None:
                 # If you want to signal an error, raise an exception or handle separately
@@ -65,7 +66,7 @@ class LLMService:
 
             # Send to ROS API
             # ros_api.send_coordinates(latitude=latitude, longitude=longitude)
-            
+
             return CoordonatesOutput(latitude=latitude, longitude=longitude)
 
 
@@ -85,6 +86,8 @@ class LLMService:
                         Always base your answers on retrieved documents when possible.
                         If the information cannot be found, clearly say so.
                         Do not say I don't know something, unless it was specifically asked by the user. In that case, you can say "I don't have that information".
+
+                        If the user asks for directions to a location on campus, use the `navigation_tool` to send coordinates to the robot to trigger the navigation.
                         """
         self.agent = create_agent(self.llm, tools=tools, system_prompt=system_prompt)
 
