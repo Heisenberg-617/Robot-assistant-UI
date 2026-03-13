@@ -40,10 +40,8 @@ def main():
             history = wf.run_text(user_query, conversation_id=conversation_id)
 
             print("\n=== Chat History ===")
-            for message in history:
-                role = message["role"].capitalize()
-                content = message["content"]
-                print(f"{role}: {content}\n")
+            last_message = history[-1]
+            print(f"\nAssistant: {last_message['content']}\n")
 
     except KeyboardInterrupt:
         print("\n\nStopped by user (Ctrl+C).")

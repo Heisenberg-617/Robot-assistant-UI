@@ -30,6 +30,14 @@ class NavigationService:
         # Add coordinates to the navigation history
         lat, long = name_to_coords[match]
         with open(self.history_file, "a") as f:
-            json.dump({"location": user_input, "date": datetime.utcnow().isoformat(), "coordinates": {"latitude": lat, "longitude": long}}, f)
+            history = json.load(f)
+            # Append new entry
+            history.append({
+                "location": user_input,
+                "date": datetime.utcnow().isoformat(),
+                "coordinates": {"latitude": lat, "longitude": long}
+            })
+        with open(self.history_file, "w") as f:
+            json.dump(history, f, indent=4)
 
         return name_to_coords[match]            
