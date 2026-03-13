@@ -1,15 +1,23 @@
 import uuid
 from src.workflow import Workflow
+from src.services.stt import SpeechToTextService
+from src.services.recorder import record
+
 import sys
 sys.stdout.reconfigure(encoding='utf-8')
+
 
 def main():
     # Initialize workflow
     wf = Workflow()
 
-    conversation_id = "9b388ac4-7a9a-498b-b233-ad011266281p"  # Generate a unique conversation ID
+    # Generate a unique conversation ID
+    conversation_id = str(uuid.uuid4())  
     
-    user_query = "Take me to the student lounge"  # Example user query that should trigger the navigation tool
+    # Record audio and transcribe via recorder service
+    file_path = record(seconds=5)
+    stt = SpeechToTextService()
+    user_query = stt.transcribe(file_path)
 
     print("\n=== Testing Workflow ===")
     print("User Query:", user_query)

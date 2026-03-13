@@ -22,4 +22,3 @@ class SpeechToTextService:
             config=self.config
         )
         return transcript.text
-

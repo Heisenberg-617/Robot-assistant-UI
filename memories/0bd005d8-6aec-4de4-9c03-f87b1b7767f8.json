@@ -1,0 +1,12 @@
+[
+  {
+    "role": "user",
+    "text": "I have a medical emergency. Can you help?",
+    "ts": "2026-03-13T11:43:31.862986"
+  },
+  {
+    "role": "assistant",
+    "text": "I’m really sorry to hear that you’re experiencing a medical emergency.  \n\n**Immediate steps you can take**\n\n1. **Call the national emergency number** – in Morocco dial **112** for urgent medical assistance.  \n2. **Reach the campus health center** – it is located on the EMINES campus at:  \n\n   **EMINES – Université Mohammed VI Polytechnique**  \n   LOT 660 – Hay Moulay Rachid  \n   43150 Ben Guerir, Maroc  \n\n   You can also contact the health center via the general campus email (the address is listed on the EMINES contact page) if you are able to send a message.\n\nIf you would like me to send the robot directions to the health center, just let me know and I’ll trigger the navigation for you.  \n\nPlease stay safe, and let me know if there’s anything else I can do to assist.",
+    "ts": "2026-03-13T11:43:31.863374"
+  }
+]

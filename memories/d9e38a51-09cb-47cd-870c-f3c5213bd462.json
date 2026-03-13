@@ -1,0 +1,12 @@
+[
+  {
+    "role": "user",
+    "text": "Hey there, could you take me to the library?",
+    "ts": "2026-03-13T11:16:14.169157"
+  },
+  {
+    "role": "assistant",
+    "text": "I’m sorry—I wasn’t able to locate a place called “library” in the system. Could you please re‑phrase your request or choose a different location? Some common spots I can navigate to are:\n\n- Student lounge  \n- Cafeteria  \n- Administration  \n- Reception  \n\nJust let me know which one you’d like to go to!",
+    "ts": "2026-03-13T11:16:14.170100"
+  }
+]

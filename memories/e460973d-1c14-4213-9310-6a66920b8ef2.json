@@ -1,0 +1,12 @@
+[
+  {
+    "role": "user",
+    "text": "Take me to the student lounge.",
+    "ts": "2026-03-13T10:50:46.013916"
+  },
+  {
+    "role": "assistant",
+    "text": "I’ve sent the directions to the robot for the student lounge.",
+    "ts": "2026-03-13T10:50:46.014788"
+  }
+]

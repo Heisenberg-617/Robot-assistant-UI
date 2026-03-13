@@ -1,6 +1,7 @@
 [
     {
             "location_name": "Cafeteria",
+            "aliases" : "Cafète, Cantine, café, coffee, food court, food, dining hall, eat, snacks, meals, beverages, lunch, dinner, breakfast",
             "description": "A place where you can get food and drinks. It is located in the main building of EMINES, near the reception hall.",
             "coordinates": {
                 "latitude": 40.712776,
@@ -9,6 +10,7 @@
         },
         {
             "location_name": "Student Lounge",
+            "aliases": "student area, lounge, common area, relaxation area, social space, hangout spot, chill zone, gathering place, play, recreation",
             "description": "A place where students can relax and socialize. It is located in the main building of EMINES, on the ground floor.",
             "coordinates": {
                 "latitude": 53.2547850,
@@ -16,11 +18,30 @@
             }
         },
         {
-            "location_name": "Direction",
+            "location_name": "Administration",
+            "aliases": "director's office, bureau directeur, management office, direction, administrative staff, finance office, financement, bourse, scholarship",
             "description": "The management office of EMINES, where you can find the administrative staff and get help with any issues related to your studies.",
             "coordinates": {
                 "latitude": 16.218774,
                 "longitude": -11.234567
+            }
+        },
+        {
+            "location_name": "Reception",
+            "aliases": "front desk, accueil, information desk, help desk, lobby, entrance, welcome area, reception area, reception hall",
+            "description": "The reception area of EMINES, where you can get information about the campus and ask for directions.",
+            "coordinates": {
+                "latitude": 48.856613,
+                "longitude": 2.352222
+            }
+        },
+        {
+            "location_name": "Health Center",
+            "aliases": "medical center, urgence médicale, infirmary, infirmerie, santé, healthcare facility, health services, medical services, emergency, urgence, first aid, health assistance",
+            "description": "A place where you can get medical assistance and health-related services. It is located in the main building of EMINES, near the administration office.",
+            "coordinates": {
+                "latitude": 34.052235,
+                "longitude": -118.243683
             }
         }
 ]

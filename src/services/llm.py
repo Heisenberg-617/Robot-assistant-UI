@@ -60,11 +60,7 @@ class LLMService:
             nav_service = NavigationService()
             latitude, longitude = nav_service.get_coordinates(location_name)
 
-            if latitude is None:
-                # If you want to signal an error, raise an exception or handle separately
-                raise ValueError(f"Could not find a location matching '{location_name}'.")
-
-            # Send to ROS API
+            # Placeholder for sending to the ROS API
             # ros_api.send_coordinates(latitude=latitude, longitude=longitude)
 
             return CoordonatesOutput(latitude=latitude, longitude=longitude)
@@ -88,6 +84,9 @@ class LLMService:
                         Do not say I don't know something, unless it was specifically asked by the user. In that case, you can say "I don't have that information".
 
                         If the user asks for directions to a location on campus, use the `navigation_tool` to send coordinates to the robot to trigger the navigation.
+                        If the tool return None, none or an error, it means the location was not found. In that case, inform the user that you couldn't find the location and ask them to rephrase or provide a different location. And suggest some valid locations as "Student lounge, cafeteria, administration, Reception or health center."
+                        When using the navigation tool, only provide the name of the location as input, and do not include any additional text in the input. For example, if the user says "How can I get to the library?", you should call `navigation_tool(location_name="library")` without any additional text.
+                        The output of the navigation tool will be coordinates, but you should not mention these coordinates in your response to the user. Instead, you can say something like "I have sent the directions to the robot" or "Heading towards the location <location_name>" after invoking the navigation tool.
                         """
         self.agent = create_agent(self.llm, tools=tools, system_prompt=system_prompt)
 
