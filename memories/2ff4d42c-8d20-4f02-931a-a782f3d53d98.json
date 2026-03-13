@@ -1,0 +1,62 @@
+[
+  {
+    "role": "user",
+    "text": "All right, what is Emin?",
+    "ts": "2026-03-13T11:51:28.028980"
+  },
+  {
+    "role": "assistant",
+    "text": "EMINES – the **School of Industrial Management** – is a higher‑education institution that focuses on training industrial managers who can meet the challenges of today’s complex, technology‑driven business environment.  \n\n**Key points about EMINES**\n\n| Aspect | Details |\n|--------|---------|\n| **Mission** | To produce graduates with solid scientific and technical foundations, combined with managerial know‑how, ready to become entrepreneurs or leaders in national and African companies. |\n| **Academic Offerings** | • **Integrated Preparatory Cycle** (2 years, post‑baccalaureate)<br>• **Engineering Cycle** (3 years, after a scientific preparatory class, a licence, or the integrated cycle)<br>• **Specialized Master’s** (1 year, co‑awarded with École des Mines de Paris – MINES ParisTech)<br>• **Industrial PhD** (4 years) |\n| **International Recognition** | • Accredited MILEO Specialized Master (Bac + 6)<br>• Co‑diploma with MINES ParisTech<br>• Recognised by the Conference of Grandes Écoles (France) |\n| **Focus Areas** | Industrial management research and education aligned with the needs of businesses in Morocco and across Africa. |\n\nIn short, EMINES is a school dedicated to developing the next generation of industrial managers through a blend of scientific rigor, engineering training, and business‑oriented education.",
+    "ts": "2026-03-13T11:51:28.029451"
+  },
+  {
+    "role": "user",
+    "text": "Can you take",
+    "ts": "2026-03-13T11:51:42.785909"
+  },
+  {
+    "role": "assistant",
+    "text": "I’m not sure I understand your request. Could you please clarify what you’d like me to do?",
+    "ts": "2026-03-13T11:51:42.786607"
+  },
+  {
+    "role": "user",
+    "text": "Can you take me to the health center?",
+    "ts": "2026-03-13T11:51:55.458547"
+  },
+  {
+    "role": "assistant",
+    "text": "I’ve sent the directions to the robot. It will guide you to the health center. Let me know if you need anything else!",
+    "ts": "2026-03-13T11:51:55.459057"
+  },
+  {
+    "role": "user",
+    "text": "Thank you.",
+    "ts": "2026-03-13T11:52:06.915494"
+  },
+  {
+    "role": "assistant",
+    "text": "You’re welcome! If you need any other assistance—whether it’s about campus services, academic programs, or directions—just let me know. Have a great day!",
+    "ts": "2026-03-13T11:52:06.916017"
+  },
+  {
+    "role": "user",
+    "text": "My name is John.",
+    "ts": "2026-03-13T11:52:21.971080"
+  },
+  {
+    "role": "assistant",
+    "text": "Nice to meet you, John! How can I assist you today?",
+    "ts": "2026-03-13T11:52:21.971592"
+  },
+  {
+    "role": "user",
+    "text": "What's my name?",
+    "ts": "2026-03-13T11:52:38.442653"
+  },
+  {
+    "role": "assistant",
+    "text": "Your name is John.",
+    "ts": "2026-03-13T11:52:38.443903"
+  }
+]

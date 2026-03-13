@@ -1,0 +1,12 @@
+[
+  {
+    "role": "user",
+    "text": "I have a medical emergency. Can you tell me where to go?",
+    "ts": "2026-03-13T11:53:58.602346"
+  },
+  {
+    "role": "assistant",
+    "text": "I’ve sent the robot to guide you to the health center. It’s on its way now. If you need any further assistance, please let me know.",
+    "ts": "2026-03-13T11:53:58.602808"
+  }
+]
