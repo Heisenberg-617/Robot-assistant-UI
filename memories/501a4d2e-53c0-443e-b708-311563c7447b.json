@@ -1,0 +1,12 @@
+[
+  {
+    "role": "user",
+    "text": "Take me to the director's office.",
+    "ts": "2026-04-09T21:56:13.911226"
+  },
+  {
+    "role": "assistant",
+    "text": "I’m sorry, I couldn’t locate a “director’s office.” You could try heading to the Administration building, the Cafétéria, or the Centre de santé instead.",
+    "ts": "2026-04-09T21:56:13.922148"
+  }
+]

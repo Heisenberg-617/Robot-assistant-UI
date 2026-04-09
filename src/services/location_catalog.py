@@ -1,10 +1,10 @@
 import json
 import re
-from difflib import SequenceMatcher
-from dataclasses import replace
 from pathlib import Path
 from typing import Iterable, List, Optional
 from unicodedata import normalize
+
+from rapidfuzz import process, fuzz
 
 from src.models import Destination
 
@@ -35,6 +35,22 @@ class LocationCatalogService:
     def __init__(self, locations_file: str = "data/locations.json"):
         self.locations_file = Path(locations_file)
         self._locations = self._load_locations()
+        
+        # Pre-compute normalized strings for rapidfuzz on startup (makes it instant)
+        self._fuzzy_choices_strings: List[str] = []
+        self._fuzzy_choices_map: List[Destination] = []
+        
+        for loc in self._locations:
+            # Add canonical name
+            self._add_fuzzy_choice(loc.location_name, loc)
+            # Add all aliases
+            for alias in loc.aliases:
+                self._add_fuzzy_choice(alias, loc)
+
+    def _add_fuzzy_choice(self, text: str, location: Destination):
+        normalized = self._normalize_text(text)
+        self._fuzzy_choices_strings.append(normalized)
+        self._fuzzy_choices_map.append(location)
 
     def _load_locations(self) -> List[Destination]:
         with self.locations_file.open("r", encoding="utf-8") as handle:
@@ -45,10 +61,7 @@ class LocationCatalogService:
             coords = raw_location.get("coordinates", {})
             location_name = str(raw_location.get("location_name", "")).strip()
             aliases = self._normalize_aliases(raw_location.get("aliases"))
-            category = self._normalize_category(
-                raw_location.get("category"),
-                location_name,
-            )
+            category = self._normalize_category(raw_location.get("category"), location_name)
 
             locations.append(
                 Destination(
@@ -98,7 +111,7 @@ class LocationCatalogService:
         category = str(raw_category or "").strip()
         if category:
             return category
-        return DEFAULT_CATEGORY_BY_NAME.get(location_name.lower(), "services")
+        return DEFAULT_CATEGORY_BY_NAME.get(location_name.lower(), "autres")
 
     def list_locations(self) -> List[Destination]:
         return list(self._locations)
@@ -119,6 +132,7 @@ class LocationCatalogService:
         category: str = "All",
         limit: Optional[int] = None,
     ) -> List[Destination]:
+        # Strict matching for the UI search bar
         normalized_query = self._normalize_text(query)
         normalized_category = self._normalize_text(category)
 
@@ -144,73 +158,38 @@ class LocationCatalogService:
         ]
         return matching_locations[:limit] if limit else matching_locations
 
-    def resolve_location(self, user_input: str, threshold: int = 60) -> Optional[Destination]:
+    # ====================================================================
+    # RAPIDFUZZ VOICE / LLM MATCHING
+    # ====================================================================
+    def resolve_location(self, user_input: str, threshold: int = 75) -> Optional[Destination]:
+        """Fuzzy matches user voice/text input against all names and aliases."""
+        if not user_input:
+            return None
+            
         normalized_input = self._normalize_text(user_input)
         if not normalized_input:
             return None
 
-        choices: dict[str, tuple[Destination, bool]] = {}
-        for location in self._locations:
-            choices[location.location_name] = (location, False)
-            for alias in location.aliases:
-                choices[alias] = (location, True)
+        # WRatio is the best scorer for phrases with missing/extra words or typos
+        match, score, idx = process.extractOne(
+            normalized_input, 
+            self._fuzzy_choices_strings, 
+            scorer=fuzz.WRatio
+        )
 
-        best_match_name = None
-        best_score = 0
-        for candidate, (location, is_alias) in choices.items():
-            candidate_lower = self._normalize_text(candidate)
-            if normalized_input == candidate_lower:
-                best_match_name = candidate
-                best_score = 100
-                break
+        # If score is above threshold, return the mapped Destination object
+        if score >= threshold:
+            return self._fuzzy_choices_map[idx]
+            
+        return None
 
-            score = self._location_match_score(normalized_input, candidate_lower, is_alias=is_alias)
-
-            if score > best_score:
-                best_score = score
-                best_match_name = candidate
-
-        if not best_match_name or best_score < threshold:
-            return None
-
-        matched_name = str(best_match_name)
-        return replace(choices[matched_name][0], matched_name=matched_name)
-
+    # ====================================================================
+    # HELPERS
+    # ====================================================================
     def _normalize_text(self, value: str) -> str:
+        """Strips accents and lowercases for rapidfuzz comparison."""
         normalized = normalize("NFKD", value or "")
         return "".join(char for char in normalized if ord(char) < 128).lower().strip()
 
-    def _location_match_score(self, query: str, candidate: str, *, is_alias: bool) -> int:
-        if not query or not candidate:
-            return 0
-
-        if query == candidate:
-            return 100
-
-        query_tokens = self._tokenize(query)
-        candidate_tokens = self._tokenize(candidate)
-        candidate_token_set = set(candidate_tokens)
-
-        overlap = sum(token in candidate_token_set for token in query_tokens)
-        overlap_score = int((overlap / max(len(query_tokens), 1)) * 100)
-        similarity_score = int(SequenceMatcher(None, query, candidate).ratio() * 100)
-
-        score = max(similarity_score, overlap_score)
-        if query in candidate:
-            score = max(score, 92 if is_alias else 88)
-
-        if candidate in query:
-            score = max(score, 86 if is_alias else 82)
-
-        has_strong_overlap = overlap > 0 or query in candidate or candidate in query
-        if not has_strong_overlap and similarity_score < 78:
-            score = max(0, similarity_score - 35)
-
-        if is_alias:
-            score += 4
-
-        return min(score, 100)
-
     def _tokenize(self, value: str) -> list[str]:
         return re.findall(r"[a-z0-9]+", value)
-

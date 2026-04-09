@@ -1,0 +1,22 @@
+[
+  {
+    "role": "user",
+    "text": "J'aimerais voir le directeur.",
+    "ts": "2026-04-09T20:20:33.032012"
+  },
+  {
+    "role": "assistant",
+    "text": "Je n’ai pas trouvé d’emplacement correspondant à « Directeur ». Vous pouvez vous rendre à l’Administration, à la Cafétéria ou au Centre de santé à la place.",
+    "ts": "2026-04-09T20:20:33.047185"
+  },
+  {
+    "role": "user",
+    "text": "Hello there, can you take me to the Director's Office?",
+    "ts": "2026-04-09T20:28:22.876435"
+  },
+  {
+    "role": "assistant",
+    "text": "I couldn’t locate a “Director’s Office.” You could go to Administration, the Cafeteria, or the Health Center instead.",
+    "ts": "2026-04-09T20:28:22.886846"
+  }
+]

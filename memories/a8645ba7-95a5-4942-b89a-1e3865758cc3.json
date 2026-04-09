@@ -1,42 +1,32 @@
 [
   {
     "role": "user",
-    "text": "Bonjour, pouvez-vous me prendre à l'administration ?",
-    "ts": "2026-04-09T18:15:16.502169"
+    "text": "Est-ce que vous pouvez me dériger vers le foyer des étudiants ?",
+    "ts": "2026-04-09T18:53:11.009726"
   },
   {
     "role": "assistant",
-    "text": "Suivez-moi, je vais vous emmener à l'administration.",
-    "ts": "2026-04-09T18:15:16.513803"
+    "text": "Désolé, je n'ai pas pu trouver le Foyer des étudiants. Pourriez-vous essayer avec d'autres noms tels que Accueil, Administration, Cafétéria, Centre de santé ou Salon Étudiant ? Je serais ravi de vous aider à trouver votre destination.",
+    "ts": "2026-04-09T18:53:11.020490"
   },
   {
     "role": "user",
-    "text": "Bonjour ! Est-ce que vous pouvez me prendre à la cafeteria ?",
-    "ts": "2026-04-09T18:23:04.762576"
+    "text": "Bonjour, pourrez-vous m'accompagner vers le foyer des étudiants ?",
+    "ts": "2026-04-09T18:55:53.823768"
   },
   {
     "role": "assistant",
-    "text": "Suivez-moi, je vais vous emmener à la cafétéria.",
-    "ts": "2026-04-09T18:23:04.773573"
+    "text": "Suivez-moi, je vais vous conduire au Foyer des étudiants.",
+    "ts": "2026-04-09T18:55:53.834639"
   },
   {
     "role": "user",
-    "text": "Est-ce que tu peux me prendre pour le tour ?",
-    "ts": "2026-04-09T18:24:53.786371"
+    "text": "Hey there, can you take me to the cafeteria?",
+    "ts": "2026-04-09T19:25:16.913006"
   },
   {
     "role": "assistant",
-    "text": "Désolé, je n'ai pas pu trouver le \"tour\". Vous pouvez essayer de vous rendre à l'Accueil, à l'Administration, à la Cafétéria, au Centre de santé ou au Salon Étudiant. Je peux vous y emmener si vous le souhaitez.",
-    "ts": "2026-04-09T18:24:53.795876"
-  },
-  {
-    "role": "user",
-    "text": "Hey, can you take me to the cafeteria?",
-    "ts": "2026-04-09T18:33:34.112319"
-  },
-  {
-    "role": "assistant",
-    "text": "Suivez-moi, je vais vous emmener à la cafétéria.",
-    "ts": "2026-04-09T18:33:34.124980"
+    "text": "Suivez-moi, je vais vous conduire à la Cafétéria.",
+    "ts": "2026-04-09T19:25:16.929200"
   }
 ]

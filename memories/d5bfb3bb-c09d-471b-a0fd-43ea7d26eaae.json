@@ -1,0 +1,22 @@
+[
+  {
+    "role": "user",
+    "text": "Hello, can you take me to the cafeteria?",
+    "ts": "2026-04-09T20:40:53.110382"
+  },
+  {
+    "role": "assistant",
+    "text": "Follow me to the cafeteria.",
+    "ts": "2026-04-09T20:40:53.126415"
+  },
+  {
+    "role": "user",
+    "text": "Now take me to the Director's Office.",
+    "ts": "2026-04-09T20:44:43.388511"
+  },
+  {
+    "role": "assistant",
+    "text": "I’m sorry, I couldn’t locate the Director’s Office. You could try heading to the Administration building, the Cafétéria, or the Centre de santé instead.",
+    "ts": "2026-04-09T20:44:43.398546"
+  }
+]

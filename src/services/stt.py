@@ -8,8 +8,7 @@ from faster_whisper import WhisperModel
 
 class SpeechToTextService:
     def __init__(self):
-        self.language = (os.getenv("VOICE_LANGUAGE_CODE", "fr").strip() or "fr")
-        self.model = WhisperModel("base", device="cpu", compute_type="int8")
+        self.model = WhisperModel("base", device="cpu", compute_type="int8", cpu_threads=4)
 
     def transcribe(self, audio_input: bytes | str) -> str:
         temp_path = None
@@ -18,11 +17,15 @@ class SpeechToTextService:
 
             segments, info = self.model.transcribe(
                 str(temp_path),
-                language=self.language,
-                beam_size=1,
+                beam_size=5,              # UPGRADED: Massive accuracy boost for French
                 vad_filter=True,
+                vad_parameters=dict(
+                    min_silence_duration_ms=400,  # Wait longer before cutting off
+                    speech_pad_ms=400            # Keep 400ms of audio before/after speech
+                ),
                 condition_on_previous_text=False,
                 temperature=0.0,
+                no_speech_threshold=0.6,   # UPGRADED: Stop hallucinating from background noise
             )
 
             text = " ".join(segment.text.strip() for segment in segments).strip()
@@ -61,7 +64,11 @@ class SpeechToTextService:
 
     def _write_temp_audio_file(self, audio_bytes: bytes) -> Path:
         suffix = self._guess_audio_suffix(audio_bytes)
-        with tempfile.NamedTemporaryFile(delete=False, suffix=suffix) as handle:
+        # Write to local app folder instead of Windows Temp to avoid Defender scans
+        temp_dir = Path("./tmp_audio")
+        temp_dir.mkdir(exist_ok=True)
+        
+        with tempfile.NamedTemporaryFile(delete=False, suffix=suffix, dir=temp_dir) as handle:
             handle.write(audio_bytes)
             return Path(handle.name)
 

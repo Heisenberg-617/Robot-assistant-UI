@@ -1,0 +1,42 @@
+[
+  {
+    "role": "user",
+    "text": "Hello, can you take me to the cafeteria?",
+    "ts": "2026-04-09T19:43:28.944428"
+  },
+  {
+    "role": "assistant",
+    "text": "Follow me to the Cafétéria.",
+    "ts": "2026-04-09T19:43:28.956107"
+  },
+  {
+    "role": "user",
+    "text": "Hé, vous pouvez prendre une mine de gaffe à la gaffe?",
+    "ts": "2026-04-09T19:54:27.630065"
+  },
+  {
+    "role": "assistant",
+    "text": "Désolé, je ne comprends pas votre demande. Pouvez-vous répéter ou me donner plus de détails ?",
+    "ts": "2026-04-09T19:54:27.647848"
+  },
+  {
+    "role": "user",
+    "text": "Could not transcribe audio.",
+    "ts": "2026-04-09T19:56:45.342155"
+  },
+  {
+    "role": "assistant",
+    "text": "Pouvez-vous répéter votre demande, s'il vous plaît ?",
+    "ts": "2026-04-09T19:56:45.354871"
+  },
+  {
+    "role": "user",
+    "text": "Hey, can you take me to the cafeteria?",
+    "ts": "2026-04-09T19:58:11.462463"
+  },
+  {
+    "role": "assistant",
+    "text": "Follow me to the Cafétéria.",
+    "ts": "2026-04-09T19:58:11.474817"
+  }
+]

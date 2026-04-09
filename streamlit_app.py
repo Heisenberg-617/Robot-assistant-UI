@@ -951,7 +951,7 @@ def render_voice_widget(assistant: Workflow, bridge: VoiceBridgeServer) -> None:
         if playback_finished and playback_finished != st.session_state.last_playback_nonce:
             st.session_state.last_playback_nonce = playback_finished
             st.session_state.robot_status = "Prêt"
-            st.rerun(scope="fragment")
+            # remove: st.rerun(scope="fragment")
 
         voice_error = state_value(component_result, "error")
         if voice_error:

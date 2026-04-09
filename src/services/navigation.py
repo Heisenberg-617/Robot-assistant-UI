@@ -38,6 +38,9 @@ class NavigationService:
         if not location:
             return None
 
+        # Use getattr so it doesn't crash if the attribute is missing
+        matched = getattr(location, 'matched_name', None) or location.location_name
+
         return {
             "location_name": location.location_name,
             "category": location.category,
@@ -47,7 +50,7 @@ class NavigationService:
             "building": location.building,
             "floor": location.floor,
             "accessible": location.accessible,
-            "matched_name": location.matched_name or location.location_name,
+            "matched_name": matched,
         }
 
     def get_coordinates(self, user_input: str):

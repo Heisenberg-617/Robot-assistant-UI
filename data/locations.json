@@ -37,13 +37,13 @@
     "location_name": "Administration",
     "category": "Administratif",
     "aliases": [
-      "administration centrale",
       "bureau administration",
       "direction",
       "directeur",
-      "Nicolas Chimanoff",
-      "admin office",
-      "director office"
+      "director",
+      "Nicolas Cheimanoff",
+      "director office",
+      "director's office"
     ],
     "description": "Bureau principal de l'administration pour les démarches administratives.",
     "building": "Bâtiment Emines",
@@ -242,7 +242,10 @@
       "lounge",
       "student lounge",
       "hangout spot",
-      "common area"
+      "common area",
+      "foyer des étudiants",
+      "foyer etudiant",
+      "foyer Emines"
     ],
     "description": "Espace de détente et de repos pour les étudiants et de jeux collectifs.",
     "building": "Bâtiment Emines",

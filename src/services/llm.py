@@ -35,7 +35,7 @@ class LLMService:
         self.navigation_service = navigation_service or NavigationService()
 
         self.llm = ChatGroq(
-            model="llama-3.1-8b-instant",
+            model="openai/gpt-oss-120b",
             temperature=0.3,
             max_retries=2,
         )
@@ -56,21 +56,27 @@ class LLMService:
         @tool("navigation_tool", args_schema=LocationInput)
         def navigation_tool(location_name: str):
             """
-            Resolve the best campus destination for a user request.
+            Resolve the best campus destination and start navigation for a user requesting navigation.
             Use this when the user wants to reach a place on campus.
             """
-
-            location = self.navigation_service.prepare_navigation(location_name)
-            if not location:
+            try:
+                result = self.navigation_service.start_navigation(
+                    location_name,
+                    requested_by="llm_agent",
+                )
+                
+                if result:
+                    # Tell the LLM exactly what was found
+                    return f"DESTINATION_FOUND: {result['location_name']}"
+                else:
+                    # Tell the LLM it failed so it uses your fallback prompt
+                    return "LOCATION_NOT_FOUND"
+                    
+            except Exception as e:
+                # Catch ANY hidden crashes (like missing attributes) and print to terminal
+                print(f"[NAV TOOL CRASH]: {e}")
                 return "LOCATION_NOT_FOUND"
-
-            return ResolvedLocationOutput(
-                location_name=location["location_name"],
-                category=location["category"],
-                description=location["description"],
-                latitude=location["latitude"],
-                longitude=location["longitude"],
-            )
+            
 
         tools = [retrieval_tool, navigation_tool]
 
@@ -91,10 +97,11 @@ class LLMService:
 
             If the user asks for directions to a location on campus, use the `navigation_tool` to resolve the best destination.
             The navigation tool can resolve close matches and aliases, so still use it when the user gives an approximate name, synonym, or common alias.
-            If the tool returns LOCATION_NOT_FOUND, explain that you could not find the destination and suggest valid options such as Accueil, Administration, Cafétéria, Centre de santé, or Salon Étudiant.
+            If the tool returns LOCATION_NOT_FOUND, explain that you could not find the destination and suggest valid options such as Administration, cafereria or health center.
             When using the navigation tool, only provide the place name as input with no extra text.
             Never expose coordinates to the user.
-            If a destination is found, tell the user to follow you to the destination and do not describing the route. Do not give coordinates or detailed directions.
+            If a destination is found, tell the user to follow you to the destination, do not describe the route. Do not give coordinates or directions.
+            Use the destination's name translated to the conversation's language in your response. 
         """
 
         chat_prompt = """
@@ -142,11 +149,10 @@ class LLMService:
         response_mode: str = "chat",
     ) -> str:
         messages = self._normalize_history(chat_history)
-        desired_language = self._detect_language(query)
         messages.append(
             {
                 "role": "system",
-                "content": "Reply in English only." if desired_language == "en" else "Répondez en français uniquement.",
+                "content": "Reply in the same language as the user's latest message.",
             }
         )
         messages.append({"role": "user", "content": query})
