@@ -1,47 +1,329 @@
 [
-    {
-            "location_name": "Cafeteria",
-            "aliases" : "Cafète, Cantine, café, coffee, food court, food, dining hall, eat, snacks, meals, beverages, lunch, dinner, breakfast",
-            "description": "A place where you can get food and drinks. It is located in the main building of EMINES, near the reception hall.",
-            "coordinates": {
-                "latitude": 40.712776,
-                "longitude": -80.789974
-            }
-        },
-        {
-            "location_name": "Student Lounge",
-            "aliases": "student area, lounge, common area, relaxation area, social space, hangout spot, chill zone, gathering place, play, recreation",
-            "description": "A place where students can relax and socialize. It is located in the main building of EMINES, on the ground floor.",
-            "coordinates": {
-                "latitude": 53.2547850,
-                "longitude": -74.006974
-            }
-        },
-        {
-            "location_name": "Administration",
-            "aliases": "director's office, bureau directeur, management office, direction, administrative staff, finance office, financement, bourse, scholarship, Nicholas Cheimanoff, Khadija Ait Heddoch, Assistante de Direction, director's assistant, Saad Khettab, ",
-            "description": "The management office of EMINES, where you can find the administrative staff and get help with any issues related to your studies.",
-            "coordinates": {
-                "latitude": 16.218774,
-                "longitude": -11.234567
-            }
-        },
-        {
-            "location_name": "Reception",
-            "aliases": "front desk, accueil, information desk, help desk, lobby, entrance, welcome area, reception area, reception hall",
-            "description": "The reception area of EMINES, where you can get information about the campus and ask for directions.",
-            "coordinates": {
-                "latitude": 48.856613,
-                "longitude": 2.352222
-            }
-        },
-        {
-            "location_name": "Health Center",
-            "aliases": "medical center, urgence médicale, infirmary, infirmerie, santé, healthcare facility, health services, medical services, emergency, urgence, first aid, health assistance",
-            "description": "A place where you can get medical assistance and health-related services. It is located in the main building of EMINES, near the administration office.",
-            "coordinates": {
-                "latitude": 34.052235,
-                "longitude": -118.243683
-            }
-        }
+  {
+    "location_name": "Station de Recharge",
+    "category": "Autre",
+    "aliases": ["Robot Station", "Recharge", "Station de recharge robot", "Charging Station", "Robot Charging Station", "Robot home base"],
+    "description": "Station de recharge pour le robot assistant, située à proximité du forum pour un accès facile.",
+    "building": "Bâtiment Emines",
+    "floor": "RDC",
+    "accessible": true,
+    "coordinates": {
+      "latitude": 40.7128,
+      "longitude": -74.006
+    }
+  },
+  {
+    "location_name": "Accueil",
+    "category": "Administratif",
+    "aliases": [
+      "reception",
+      "accueil principal",
+      "information",
+      "front desk",
+      "help desk",
+      "welcome desk",
+      "reception hall"
+    ],
+    "description": "Accueil principal de l'école pour les visiteurs et les étudiants.",
+    "building": "Bâtiment Emines",
+    "floor": "RDC",
+    "accessible": true,
+    "coordinates": {
+      "latitude": 40.7128,
+      "longitude": -74.006
+    }
+  },
+  {
+    "location_name": "Administration",
+    "category": "Administratif",
+    "aliases": [
+      "administration centrale",
+      "bureau administration",
+      "direction",
+      "directeur",
+      "Nicolas Chimanoff",
+      "admin office",
+      "director office"
+    ],
+    "description": "Bureau principal de l'administration pour les démarches administratives.",
+    "building": "Bâtiment Emines",
+    "floor": "RDC",
+    "accessible": true,
+    "coordinates": {
+      "latitude": 40.7128,
+      "longitude": -74.006
+    }
+  },
+  {
+    "location_name": "Bureau d'Aide Financière",
+    "category": "Administratif",
+    "aliases": [
+      "aide financiere",
+      "bourses",
+      "financement",
+      "Khadija Ait Heddouche",
+      "financial aid",
+      "scholarships",
+      "finance office"
+    ],
+    "description": "Services d'aide financière, bourses et accompagnement administratif.",
+    "building": "Bâtiment Emines",
+    "floor": "RDC",
+    "accessible": true,
+    "coordinates": {
+      "latitude": 40.7128,
+      "longitude": -74.006
+    }
+  },
+  {
+    "location_name": "Bureau des Admissions",
+    "category": "Administratif",
+    "aliases": [
+      "admissions",
+      "inscription"
+    ],
+    "description": "Services des admissions, candidatures et inscriptions académiques.",
+    "building": "Bâtiment Emines",
+    "floor": "RDC",
+    "accessible": true,
+    "coordinates": {
+      "latitude": 40.7128,
+      "longitude": -74.006
+    }
+  },
+  {
+    "location_name": "Affaires Étudiantes",
+    "category": "Administratif",
+    "aliases": [
+      "affaires etudiantes",
+      "vie etudiante",
+      "student affairs"
+    ],
+    "description": "Bureau des affaires étudiantes pour l'accompagnement de la vie sur campus.",
+    "building": "Bâtiment Emines",
+    "floor": "RDC",
+    "accessible": true,
+    "coordinates": {
+      "latitude": 40.7128,
+      "longitude": -74.006
+    }
+  },
+  {
+    "location_name": "Bureau d'Ordre",
+    "category": "Services",
+    "aliases": [
+      "courrier",
+      "bureau ordre",
+      "commandes"
+    ],
+    "description": "Le bureau d'ordre gère la réception et la distribution du courrier et des colis pour les étudiants et le personnel de l'école. Il est situé dans la salle de réception.",
+    "building": "Bâtiment Emines",
+    "floor": "RDC",
+    "accessible": true,
+    "coordinates": {
+      "latitude": 40.7128,
+      "longitude": -74.006
+    }
+  },
+  {
+    "location_name": "Centre de santé",
+    "category": "Santé",
+    "aliases": [
+      "sante",
+      "medical",
+      "infirmerie",
+      "centre medical",
+      "health center",
+      "medical center",
+      "clinic"
+    ],
+    "description": "Services médicaux et counselling santé pour les étudiants et le personnel.",
+    "building": "Bâtiment Emines",
+    "floor": "RDC",
+    "accessible": true,
+    "coordinates": {
+      "latitude": 40.7133,
+      "longitude": -74.0065
+    }
+  },
+  {
+    "location_name": "Laboratoire de Physique Expérimentale",
+    "category": "Laboratoire",
+    "aliases": [
+      "lab physique",
+      "physique experimentale",
+      "laboratoire pe"
+    ],
+    "description": "Laboratoire dédié aux expériences pratiques et démonstrations en physique.",
+    "building": "Bâtiment des Sciences",
+    "floor": "RDC",
+    "accessible": true,
+    "coordinates": {
+      "latitude": 40.7131,
+      "longitude": -74.0063
+    }
+  },
+  {
+    "location_name": "Laboratoire de Projet d'Ingénierie",
+    "category": "Laboratoire",
+    "aliases": [
+      "projet ingenierie",
+      "laboratoire pi",
+      "lab ingenierie"
+    ],
+    "description": "Espace de prototypage et de réalisation pour les projets d'ingénierie.",
+    "building": "Bâtiment Emines",
+    "floor": "RDC",
+    "accessible": true,
+    "coordinates": {
+      "latitude": 40.713,
+      "longitude": -74.0062
+    }
+  },
+  {
+    "location_name": "Laboratoire de Mécatronique",
+    "category": "Laboratoire",
+    "aliases": [
+      "mecatronique",
+      "lab mecatronique"
+    ],
+    "description": "Laboratoire équipé pour les systèmes embarqués, robots et projets mécatroniques.",
+    "building": "Bâtiment Emines",
+    "floor": "RDC",
+    "accessible": true,
+    "coordinates": {
+      "latitude": 40.713,
+      "longitude": -74.0062
+    }
+  },
+  {
+    "location_name": "Cafétéria",
+    "category": "Alimentation",
+    "aliases": [
+      "cafeteria",
+      "cantine",
+      "repas",
+      "restauration",
+      "dining hall",
+      "food court"
+    ],
+    "description": "Cafétéria principale proposant repas, boissons et pauses rapides sur le campus.",
+    "building": "Bâtiment Emines",
+    "floor": "RDC",
+    "accessible": true,
+    "coordinates": {
+      "latitude": 40.7132,
+      "longitude": -74.0064
+    }
+  },
+  {
+    "location_name": "Radio Étudiante",
+    "category": "Média",
+    "aliases": [
+      "radio",
+      "studio radio"
+    ],
+    "description": "Studio de radio étudiante pour émissions, podcasts et productions audio.",
+    "building": "Bâtiment Emines",
+    "floor": "RDC",
+    "accessible": true,
+    "coordinates": {
+      "latitude": 40.7132,
+      "longitude": -74.0064
+    }
+  },
+  {
+    "location_name": "Foyer Étudiant",
+    "category": "Détente",
+    "aliases": [
+      "salon",
+      "detente",
+      "repos",
+      "lounge",
+      "student lounge",
+      "hangout spot",
+      "common area"
+    ],
+    "description": "Espace de détente et de repos pour les étudiants et de jeux collectifs.",
+    "building": "Bâtiment Emines",
+    "floor": "RDC",
+    "accessible": true,
+    "coordinates": {
+      "latitude": 40.7132,
+      "longitude": -74.0064
+    }
+  },
+  {
+    "location_name": "Bureau E-tech",
+    "category": "Clubs",
+    "aliases": [
+      "etech",
+      "club e-tech",
+      "technologie",
+      "fabrication",
+      "projets innovants",
+      "robotique"
+    ],
+    "description": "Bureau du club E-tech pour les activités liées à la technologie, la fabrication, et les projets innovants. Le materiel de fabrication du club est disponible dans ce bureau pour les étudiants qui souhaitent travailler sur leurs projets personnels ou collaboratifs.",
+    "building": "Bâtiment Emines",
+    "floor": "RDC",
+    "accessible": true,
+    "coordinates": {
+      "latitude": 40.7134,
+      "longitude": -74.0066
+    }
+  },
+  {
+    "location_name": "Bureau E-olive",
+    "category": "Clubs",
+    "aliases": [
+      "eolive",
+      "club e-olive",
+      "oliviers",
+      "huile d'olive"
+    ],
+    "description": "Bureau du club E-olive part de E-solidarity pour l'activité de cultuvations d'oliviers du campus et pressage d'huile d'olive.",
+    "building": "Bâtiment Emines",
+    "floor": "RDC",
+    "accessible": true,
+    "coordinates": {
+      "latitude": 40.7134,
+      "longitude": -74.0066
+    }
+  },
+  {
+    "location_name": "Bureau E-mix",
+    "category": "Clubs",
+    "aliases": [
+      "emix",
+      "club e-mix",
+      "dj",
+      "mixing"
+    ],
+    "description": "Bureau du club E-mix pour le mixing musical et le DJing.",
+    "building": "Bâtiment Emines",
+    "floor": "RDC",
+    "accessible": true,
+    "coordinates": {
+      "latitude": 40.7134,
+      "longitude": -74.0066
+    }
+  },
+  {
+    "location_name": "Service d'Impression",
+    "category": "Services",
+    "aliases": [
+      "impression",
+      "photocopie",
+      "print"
+    ],
+    "description": "Services d'impression, photocopies et documents pour les étudiants.",
+    "building": "Bâtiment Emines",
+    "floor": "RDC",
+    "accessible": true,
+    "coordinates": {
+      "latitude": 40.7133,
+      "longitude": -74.0065
+    }
+  }
 ]

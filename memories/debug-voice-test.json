@@ -1,0 +1,12 @@
+[
+  {
+    "role": "user",
+    "text": "OÃ¹ se trouve la cafÃ©tÃ©ria?",
+    "ts": "2026-04-07T21:38:53.780396"
+  },
+  {
+    "role": "assistant",
+    "text": "Suivez‑moi, la cafétéria se trouve dans le bâtiment principal, juste à côté du hall d’accueil.",
+    "ts": "2026-04-07T21:38:53.791933"
+  }
+]

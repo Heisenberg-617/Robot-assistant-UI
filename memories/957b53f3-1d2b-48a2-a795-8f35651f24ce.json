@@ -1,0 +1,12 @@
+[
+  {
+    "role": "user",
+    "text": "hey",
+    "ts": "2026-04-07T19:56:36.340949"
+  },
+  {
+    "role": "assistant",
+    "text": "Hello! How can I help you today? Whether you need information about EMINES programs, admissions, or directions around the campus, just let me know.",
+    "ts": "2026-04-07T19:56:36.350128"
+  }
+]

@@ -1,147 +1,167 @@
-from typing import Optional, List, Union
-from dotenv import load_dotenv
+from typing import List, Optional, Union
 
-from langchain_groq import ChatGroq
-from langchain.tools import tool
+from dotenv import load_dotenv
 from langchain.agents import create_agent
-from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
-from langchain_core.messages import BaseMessage, HumanMessage, AIMessage
-from langchain_core.documents import Document
+from langchain.tools import tool
+from langchain_core.messages import BaseMessage
+from langchain_groq import ChatGroq
 from pydantic import BaseModel, Field
 
-from src.services.rag import RAGService
 from src.services.navigation import NavigationService
+from src.services.rag import RAGService
 
 load_dotenv(override=True)
 
+
 class RetrievalInput(BaseModel):
     query: str = Field(description="User query to search in the knowledge base")
-class CoordonatesOutput(BaseModel):
+
+
+class ResolvedLocationOutput(BaseModel):
+    location_name: str = Field(description="Canonical location name")
+    category: str = Field(description="Destination category")
+    description: str = Field(description="Short description of the destination")
     latitude: float = Field(description="Latitude for navigation")
     longitude: float = Field(description="Longitude for navigation")
+
+
 class LocationInput(BaseModel):
     location_name: str = Field(description="Name of the place the user wants to go to")
 
-class LLMService:
-    def __init__(self, rag_service: RAGService):
-        # Initialize RAG service
-        self.rag = rag_service
 
-        # Groq model
+class LLMService:
+    def __init__(self, rag_service: RAGService, navigation_service: Optional[NavigationService] = None):
+        self.rag = rag_service
+        self.navigation_service = navigation_service or NavigationService()
+
         self.llm = ChatGroq(
-            model="openai/gpt-oss-120b",
+            model="llama-3.1-8b-instant",
             temperature=0.3,
-            max_retries=3,
+            max_retries=2,
         )
 
-        # RAG search as a tool
         @tool("document_retriever", args_schema=RetrievalInput)
         def retrieval_tool(query: str) -> str:
             """
             Search the internal knowledge base for relevant documents.
-            Use this when answering questions about EMINES school programs, UM6P or any related information.
+            Use this when answering questions about EMINES school programs, UM6P, or related information.
             """
 
             docs = self.rag.search(query, k=3)
-
             if not docs:
                 return "No relevant documents found."
 
-            return "\n\n".join(
-                [f"{doc.page_content}" for doc in docs]
-            )
-    
+            return "\n\n".join(doc.page_content for doc in docs)
+
         @tool("navigation_tool", args_schema=LocationInput)
-        def navigation_tool(location_name: str) -> CoordonatesOutput:
+        def navigation_tool(location_name: str):
             """
-            Connect to ROS API and send coordinates of the user-requested location.
-            Uses fuzzy matching to handle variations in naming.
+            Resolve the best campus destination for a user request.
+            Use this when the user wants to reach a place on campus.
             """
-            nav_service = NavigationService()
-            latitude, longitude = nav_service.get_coordinates(location_name)
 
-            # Placeholder for sending to the ROS API
-            # ros_api.send_coordinates(latitude=latitude, longitude=longitude)
+            location = self.navigation_service.prepare_navigation(location_name)
+            if not location:
+                return "LOCATION_NOT_FOUND"
 
-            return CoordonatesOutput(latitude=latitude, longitude=longitude)
-
+            return ResolvedLocationOutput(
+                location_name=location["location_name"],
+                category=location["category"],
+                description=location["description"],
+                latitude=location["latitude"],
+                longitude=location["longitude"],
+            )
 
         tools = [retrieval_tool, navigation_tool]
 
-        # Agent prompt
-        system_prompt = """
-                        You are a professional AI assistant integrated on a navigation robot for the EMINES school.
-                        Your main tasks are to provide information about the school and its programs, and to assist users in navigating the campus. 
-                        You impersonate a friendly and helpful Robot who is always ready to assist and guide students, staff, and visitors.
+        base_prompt = """
+            You are a professional AI assistant integrated on a navigation robot for the EMINES school.
+            Your main tasks are to provide information about the school and its programs, and to assist users in navigating the campus.
+            You are friendly, direct, and practical.
+            You have to answer in the SAME language as the user's latest message!
 
-                        You have access to a RAG tool called `document_retriever` to use whenever a user asks about:
-                        - EMINES programs
-                        - UM6P
-                        - school information
-                        - admissions
-                        - academic details
+            You have access to a RAG tool called `document_retriever` ONLY to be used when the user asks specific factual questions about:
+            - EMINES programs
+            - UM6P
+            - school information
+            - admissions
+            - academic details
+            DO NOT use the tool for greetings, simple chitchat, or standard navigation requests.
+            If the information cannot be found, clearly say so.
 
-                        Always base your answers on retrieved documents when possible.
-                        If the information cannot be found, clearly say so.
-                        Do not say I don't know something, unless it was specifically asked by the user. In that case, you can say "I don't have that information".
+            If the user asks for directions to a location on campus, use the `navigation_tool` to resolve the best destination.
+            The navigation tool can resolve close matches and aliases, so still use it when the user gives an approximate name, synonym, or common alias.
+            If the tool returns LOCATION_NOT_FOUND, explain that you could not find the destination and suggest valid options such as Accueil, Administration, Cafétéria, Centre de santé, or Salon Étudiant.
+            When using the navigation tool, only provide the place name as input with no extra text.
+            Never expose coordinates to the user.
+            If a destination is found, tell the user to follow you to the destination and do not describing the route. Do not give coordinates or detailed directions.
+        """
 
-                        If the user asks for directions to a location on campus, use the `navigation_tool` to send coordinates to the robot to trigger the navigation.
-                        If the tool return None, none or an error, it means the location was not found. In that case, inform the user that you couldn't find the location and ask them to rephrase or provide a different location. And suggest some valid locations as "Student lounge, cafeteria, administration, Reception or health center."
-                        When using the navigation tool, only provide the name of the location as input, and do not include any additional text in the input. For example, if the user says "How can I get to the library?", you should call `navigation_tool(location_name="library")` without any additional text.
-                        The output of the navigation tool will be coordinates, but you should not mention these coordinates in your response to the user. Instead, you can say something like "Follow me, I'll take you there" or "Heading towards the location <location_name>, please come with me" after invoking the navigation tool.
-                        """
-        self.agent = create_agent(self.llm, tools=tools, system_prompt=system_prompt)
+        chat_prompt = """
+            You are replying in a chat widget.
+            Keep answers informative and helpful, but you can be more detailed and use markdown formatting when appropriate.
+        """
+
+        voice_prompt = """
+            You are speaking through the robot's audio output.
+            Keep answers short, natural, and easy to read aloud.
+            Prefer one to two short sentences.
+            Avoid markdown, long lists, and dense explanations unless the user explicitly asks for detail.
+        """
+
+        self.agents = {
+            "chat": create_agent(self.llm, tools=tools, system_prompt=f"{base_prompt}\n{chat_prompt}"),
+            "voice": create_agent(self.llm, tools=tools, system_prompt=f"{base_prompt}\n{voice_prompt}"),
+        }
 
     def _normalize_history(self, chat_history: Optional[List[Union[BaseMessage, dict]]]) -> List[dict]:
-        """Return a list of messages as dictionaries with {'role','content'}"""
         out = []
         if not chat_history:
             return out
-        for m in chat_history:
-            # Accept LangChain message objects
-            if hasattr(m, "type") and hasattr(m, "content"):
-                # LangChain vX message object
-                role = "user" if m.type == "human" else "assistant" if m.type == "ai" else getattr(m, "role", None)
+
+        for message in chat_history:
+            if hasattr(message, "type") and hasattr(message, "content"):
+                role = "user" if message.type == "human" else "assistant" if message.type == "ai" else getattr(message, "role", None)
                 if role is None:
-                    # fallback based on class name
-                    role = "user" if m.__class__.__name__.lower().startswith("human") else "assistant"
-                out.append({"role": role, "content": m.content})
-            elif hasattr(m, "role") and hasattr(m, "content"):
-                out.append({"role": m.role, "content": m.content})
-            elif isinstance(m, dict) and "role" in m and "content" in m:
-                out.append({"role": m["role"], "content": m["content"]})
+                    role = "user" if message.__class__.__name__.lower().startswith("human") else "assistant"
+                out.append({"role": role, "content": message.content})
+            elif hasattr(message, "role") and hasattr(message, "content"):
+                out.append({"role": message.role, "content": message.content})
+            elif isinstance(message, dict) and "role" in message and "content" in message:
+                out.append({"role": message["role"], "content": message["content"]})
             else:
-                # Best effort: stringify
-                out.append({"role": "user", "content": str(m)})
+                out.append({"role": "user", "content": str(message)})
+
         return out
 
-    def generate(self, query: str, chat_history: Optional[List[Union[BaseMessage, dict]]] = None, tool_inputs: Optional[dict] = None) -> str:
-        """
-        Generate a textual response from the agent.
-
-        - chat_history: optional list of LangChain message objects (HumanMessage/AIMessage) or dicts
-        - tool_inputs: optional dict passed to the agent when invoking tools
-        """
-        # Normalize chat history into role/content dicts
+    def generate(
+        self,
+        query: str,
+        chat_history: Optional[List[Union[BaseMessage, dict]]] = None,
+        tool_inputs: Optional[dict] = None,
+        response_mode: str = "chat",
+    ) -> str:
         messages = self._normalize_history(chat_history)
-
-        # Append current user message
+        desired_language = self._detect_language(query)
+        messages.append(
+            {
+                "role": "system",
+                "content": "Reply in English only." if desired_language == "en" else "Répondez en français uniquement.",
+            }
+        )
         messages.append({"role": "user", "content": query})
 
         invoke_payload = {"messages": messages}
         if tool_inputs:
             invoke_payload["tool_inputs"] = tool_inputs
 
-        # The agent.invoke call can return different shapes depending on the langchain version.
-        resp = self.agent.invoke(invoke_payload)
+        agent = self.agents.get(response_mode, self.agents["chat"])
+        resp = agent.invoke(invoke_payload)
 
-        # Try to extract text from response in a few common shapes
         result_text = ""
         try:
-            # If resp is a dict containing 'messages' (list)
             if isinstance(resp, dict) and "messages" in resp and resp["messages"]:
                 last = resp["messages"][-1]
-                # last might be object or dict
                 if hasattr(last, "content"):
                     result_text = last.content
                 elif isinstance(last, dict) and "content" in last:
@@ -149,13 +169,10 @@ class LLMService:
                 else:
                     result_text = str(last)
             elif hasattr(resp, "content"):
-                # maybe a single BaseMessage-like
                 result_text = resp.content
             else:
-                # fallback to stringifying response
                 result_text = str(resp)
         except Exception:
             result_text = str(resp)
 
-        # Ensure we return a plain string
         return result_text

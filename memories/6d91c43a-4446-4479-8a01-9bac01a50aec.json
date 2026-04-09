@@ -1,0 +1,12 @@
+[
+  {
+    "role": "user",
+    "text": "Hello, can you take me to the cafeteria?",
+    "ts": "2026-04-08T22:54:23.577973"
+  },
+  {
+    "role": "assistant",
+    "text": "Sure! Follow me to the Cafétéria. It's the main dining hall where you can get meals, drinks, and quick snacks.",
+    "ts": "2026-04-08T22:54:23.590281"
+  }
+]

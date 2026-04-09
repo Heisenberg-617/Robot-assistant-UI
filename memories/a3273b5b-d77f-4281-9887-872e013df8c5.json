@@ -1,0 +1,12 @@
+[
+  {
+    "role": "user",
+    "text": "Bonjour, où se trouve le bureau du directeur?",
+    "ts": "2026-03-15T02:05:36.732183"
+  },
+  {
+    "role": "assistant",
+    "text": "Suivez‑moi, je vous conduis au bureau du directeur.",
+    "ts": "2026-03-15T02:05:36.732712"
+  }
+]

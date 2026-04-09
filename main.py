@@ -1,5 +1,5 @@
 def main():
-    print("Hello from robot-assistant-chatbot!")
+    print("Run the Streamlit UI with: streamlit run streamlit_app.py")
 
 
 if __name__ == "__main__":

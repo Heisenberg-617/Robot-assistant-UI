@@ -19,7 +19,6 @@ Requires-Dist: pyaudio>=0.2.14
 Requires-Dist: pydub>=0.25.1
 Requires-Dist: pypdf>=6.7.0
 Requires-Dist: requests>=2.32.5
-Requires-Dist: gradio>=3.45.0
 Requires-Dist: sentence-transformers>=2.2.2
 
 # robot-assistant-chatbot

@@ -1,0 +1,42 @@
+[
+  {
+    "role": "user",
+    "text": "Bonjour, pouvez-vous me prendre à l'administration ?",
+    "ts": "2026-04-09T18:15:16.502169"
+  },
+  {
+    "role": "assistant",
+    "text": "Suivez-moi, je vais vous emmener à l'administration.",
+    "ts": "2026-04-09T18:15:16.513803"
+  },
+  {
+    "role": "user",
+    "text": "Bonjour ! Est-ce que vous pouvez me prendre à la cafeteria ?",
+    "ts": "2026-04-09T18:23:04.762576"
+  },
+  {
+    "role": "assistant",
+    "text": "Suivez-moi, je vais vous emmener à la cafétéria.",
+    "ts": "2026-04-09T18:23:04.773573"
+  },
+  {
+    "role": "user",
+    "text": "Est-ce que tu peux me prendre pour le tour ?",
+    "ts": "2026-04-09T18:24:53.786371"
+  },
+  {
+    "role": "assistant",
+    "text": "Désolé, je n'ai pas pu trouver le \"tour\". Vous pouvez essayer de vous rendre à l'Accueil, à l'Administration, à la Cafétéria, au Centre de santé ou au Salon Étudiant. Je peux vous y emmener si vous le souhaitez.",
+    "ts": "2026-04-09T18:24:53.795876"
+  },
+  {
+    "role": "user",
+    "text": "Hey, can you take me to the cafeteria?",
+    "ts": "2026-04-09T18:33:34.112319"
+  },
+  {
+    "role": "assistant",
+    "text": "Suivez-moi, je vais vous emmener à la cafétéria.",
+    "ts": "2026-04-09T18:33:34.124980"
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "role": "user",
+    "text": "Bonjour, comment puis-je vous aider aujourd'hui?",
+    "ts": "2026-04-08T21:08:08.084589"
+  },
+  {
+    "role": "assistant",
+    "text": "BonjourÃ¢â‚¬Â¯! Que puisÃ¢â‚¬â€˜je faire pour vous aujourdÃ¢â‚¬â„¢huiÃ¢â‚¬Â¯?",
+    "ts": "2026-04-08T21:08:08.106519"
+  },
+  {
+    "role": "user",
+    "text": "Bonjour, comment puis-je vous aider aujourd'hui?",
+    "ts": "2026-04-08T21:08:52.389095"
+  },
+  {
+    "role": "assistant",
+    "text": "Bonjour ! En quoi puis‑je vous assister aujourd’hui ?",
+    "ts": "2026-04-08T21:08:52.400195"
+  }
+]

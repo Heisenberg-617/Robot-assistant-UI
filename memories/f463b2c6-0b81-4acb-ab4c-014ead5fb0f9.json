@@ -1,0 +1,12 @@
+[
+  {
+    "role": "user",
+    "text": "Take me to the cafeteria.",
+    "ts": "2026-04-07T20:10:07.837444"
+  },
+  {
+    "role": "assistant",
+    "text": "The destination is the **Cafeteria**. It’s confirmed and you can start navigation from the UI. Enjoy your meal!",
+    "ts": "2026-04-07T20:10:07.847165"
+  }
+]

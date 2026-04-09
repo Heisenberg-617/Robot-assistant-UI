@@ -1,0 +1,22 @@
+[
+  {
+    "role": "user",
+    "text": "What is emines?",
+    "ts": "2026-04-09T18:14:25.022452"
+  },
+  {
+    "role": "assistant",
+    "text": "L'EMINES est une école d'ingénieurs marocaine qui offre des programmes de formation en ingénierie. Elle a pour objectif de former des étudiants compétents et qualifiés pour répondre aux besoins du marché du travail. L'école compte 35 élèves par promotion en 1ère et 2ème années du cycle préparatoire intégré, et 70 élèves par promotion en 1ère, 2ème et 3ème années du cycle ingénieur. Les admissions sont basées sur des concours spécifiques pour les cycles préparatoire intégré et ingénieur.",
+    "ts": "2026-04-09T18:14:25.033572"
+  },
+  {
+    "role": "user",
+    "text": "can you take me to the cafeteria",
+    "ts": "2026-04-09T18:14:52.330218"
+  },
+  {
+    "role": "assistant",
+    "text": "Suivez-moi jusqu'à la cafétéria.",
+    "ts": "2026-04-09T18:14:52.349407"
+  }
+]

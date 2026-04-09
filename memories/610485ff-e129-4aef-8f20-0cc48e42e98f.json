@@ -1,0 +1,12 @@
+[
+  {
+    "role": "user",
+    "text": "Hello, can you take me to the director's office?",
+    "ts": "2026-04-08T21:10:09.116883"
+  },
+  {
+    "role": "assistant",
+    "text": "I’m sorry, I couldn’t locate a “Director’s Office” on the campus map. Would you like to go to a nearby place such as the Administration office, Reception, Student Lounge, Cafeteria, or Health Center instead?",
+    "ts": "2026-04-08T21:10:09.133395"
+  }
+]

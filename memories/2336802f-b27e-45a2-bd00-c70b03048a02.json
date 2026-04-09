@@ -1,0 +1,32 @@
+[
+  {
+    "role": "user",
+    "text": "hey",
+    "ts": "2026-04-08T13:56:09.861669"
+  },
+  {
+    "role": "assistant",
+    "text": "Hey! How can I help you today? Whether you need information about EMINES programs, admissions, or directions around the campus, just let me know.",
+    "ts": "2026-04-08T13:56:09.877974"
+  },
+  {
+    "role": "user",
+    "text": "I'm injured can you hep",
+    "ts": "2026-04-08T13:56:29.902214"
+  },
+  {
+    "role": "assistant",
+    "text": "I’m sorry to hear you’re hurt. Follow me to the **Health Center**—it’s located in the main EMINES building near the administration office. I’ll guide you there right away.",
+    "ts": "2026-04-08T13:56:29.915567"
+  },
+  {
+    "role": "user",
+    "text": "What's emines?",
+    "ts": "2026-04-08T13:56:52.523989"
+  },
+  {
+    "role": "assistant",
+    "text": "**EMINES – School of Industrial Management**\n\nEMINES (École des Mines) is a **public engineering school** that focuses on training industrial managers who can meet the challenges of today’s complex, technology‑driven business environment.  \n\n### Core Mission\n- **Train managers** with solid scientific and technical foundations, ready to become entrepreneurs or leaders in national and African companies.  \n- **Develop research** that aligns with the needs of industry across Africa.\n\n### Academic Programs\n| Cycle | Duration | Entry Route |\n|-------|----------|-------------|\n| **Integrated Preparatory Cycle** | 2 years | After the baccalaureate (open competition) |\n| **Engineering Cycle** | 3 years | After a preparatory scientific class, a scientific licence, or via the Integrated Preparatory Cycle |\n| **Specialized Master’s (MILEO)** | 1 year | After a Bac + 4/5 degree (co‑granted with MINES ParisTech) |\n| **Industrial PhD** | 4 years | After a Bac + 5 degree |\n\n### International Recognition\n- **MILEO Specialized Master** accredited (Bac + 6) and co‑awarded with **MINES ParisTech**.  \n- Recognized by the **Conference of Grandes Écoles** (France, June 2014).  \n- Ongoing accreditation process with the French Engineering Commission (CTI) for the Integrated Preparatory and Engineering cycles.\n\nIn short, EMINES prepares engineers who can bridge the gap between technical expertise and business strategy, with programs ranging from preparatory studies to doctoral research. If you’d like more details about a specific program, admissions, or campus facilities, just let me know!",
+    "ts": "2026-04-08T13:56:52.536208"
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "role": "user",
+    "text": "What is emines?",
+    "ts": "2026-04-09T16:11:12.991300"
+  },
+  {
+    "role": "assistant",
+    "text": "L'EMINES est une école d'ingénieurs qui propose des programmes de formation de qualité pour les élèves qui souhaitent devenir ingénieurs. L'école a pour objectif de fournir une formation de haut niveau qui permettra aux élèves de réussir dans leur carrière future. Les effectifs visés sont de 35 élèves par promotion pour le cycle préparatoire intégré et de 70 élèves par promotion pour le cycle ingénieur. Les admissions sont basées sur des concours spécifiques pour chaque cycle.",
+    "ts": "2026-04-09T16:11:13.001844"
+  },
+  {
+    "role": "user",
+    "text": "Can you take me to the cafeteria",
+    "ts": "2026-04-09T16:11:31.229562"
+  },
+  {
+    "role": "assistant",
+    "text": "Suivez-moi pour vous rendre à la cafétéria.",
+    "ts": "2026-04-09T16:11:31.241928"
+  }
+]

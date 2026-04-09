@@ -46,5 +46,124 @@
             "latitude": 34.052235,
             "longitude": -118.243683
         }
+    },
+    {
+        "location": "bureau du directeur",
+        "date": "2026-03-15T02:05:36.353099",
+        "coordinates": {
+            "latitude": 34.052235,
+            "longitude": -118.243683
+        }
+    },
+    {
+        "location": "cafeteria",
+        "date": "2026-03-15T03:17:24.396323",
+        "coordinates": {
+            "latitude": 40.712776,
+            "longitude": -80.789974
+        }
+    },
+    {
+        "location": "Student Lounge",
+        "matched_name": "lounge",
+        "category": "Student Life",
+        "date": "2026-04-07T19:58:27.061937+00:00",
+        "requested_by": "streamlit_ui",
+        "coordinates": {
+            "latitude": 53.254785,
+            "longitude": -74.006974
+        }
+    },
+    {
+        "location": "Cafeteria",
+        "matched_name": "cafete",
+        "category": "Dining",
+        "date": "2026-04-08T13:55:36.623111+00:00",
+        "requested_by": "streamlit_ui",
+        "coordinates": {
+            "latitude": 40.712776,
+            "longitude": -80.789974
+        }
+    },
+    {
+        "location": "Cafeteria",
+        "matched_name": "cafete",
+        "category": "Dining",
+        "date": "2026-04-08T14:20:55.755978+00:00",
+        "requested_by": "streamlit_ui",
+        "coordinates": {
+            "latitude": 40.712776,
+            "longitude": -80.789974
+        }
+    },
+    {
+        "location": "Student Lounge",
+        "matched_name": "lounge",
+        "category": "Student Life",
+        "date": "2026-04-08T14:21:09.368642+00:00",
+        "requested_by": "streamlit_ui",
+        "coordinates": {
+            "latitude": 53.254785,
+            "longitude": -74.006974
+        }
+    },
+    {
+        "location": "Administration",
+        "matched_name": "Administration",
+        "category": "administratif",
+        "date": "2026-04-08T23:15:50.468528+00:00",
+        "requested_by": "streamlit_ui",
+        "coordinates": {
+            "latitude": 40.7128,
+            "longitude": -74.006
+        }
+    },
+    {
+        "location": "Administration",
+        "matched_name": "Administration",
+        "category": "administratif",
+        "date": "2026-04-08T23:48:05.695307+00:00",
+        "requested_by": "streamlit_ui",
+        "coordinates": {
+            "latitude": 40.7128,
+            "longitude": -74.006
+        }
+    },
+    {
+        "location": "Administration",
+        "matched_name": "Administration",
+        "category": "administratif",
+        "date": "2026-04-08T23:55:05.548734+00:00",
+        "requested_by": "streamlit_ui",
+        "coordinates": {
+            "latitude": 40.7128,
+            "longitude": -74.006
+        }
+    },
+    {
+        "location": "Bureau d'Aide Financière",
+        "matched_name": "Bureau d'Aide Financière",
+        "category": "administratif",
+        "date": "2026-04-09T13:47:15.255836+00:00",
+        "requested_by": "streamlit_ui",
+        "coordinates": {
+            "latitude": 40.7128,
+            "longitude": -74.006
+        },
+        "dispatch": {
+            "status": "placeholder",
+            "message": "Navigation command prepared. Connect ROBOT_NAVIGATION_API_URL to send it to ROS.",
+            "api_url": null,
+            "command_payload": {
+                "destination": "Bureau d'Aide Financière",
+                "matched_name": "Bureau d'Aide Financière",
+                "coordinates": {
+                    "latitude": 40.7128,
+                    "longitude": -74.006
+                },
+                "building": "Bâtiment Emines",
+                "floor": "RDC"
+            }
+        }
     }
 ]
