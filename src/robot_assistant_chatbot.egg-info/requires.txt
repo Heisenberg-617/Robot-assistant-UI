@@ -1,5 +1,4 @@
 assemblyai>=0.52.0
-beautifulsoup4>=4.14.3
 chromadb>=1.5.0
 dotenv>=0.9.9
 langchain>=1.2.10
@@ -9,7 +8,6 @@ langchain-huggingface>=1.2.0
 langchain-openai>=1.1.9
 langgraph>=1.0.4
 numpy>=2.3.5
-pyaudio>=0.2.14
 pydub>=0.25.1
 pypdf>=6.7.0
 requests>=2.32.5

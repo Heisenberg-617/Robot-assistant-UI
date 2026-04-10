@@ -70,9 +70,6 @@ class Workflow:
 
     def run_text(self, text: str, conversation_id: str = None) -> str:
         """Run the workflow for a plain text query (bypasses STT).
-
-        This is useful for local testing and for the Gradio UI so we don't
-        require AssemblyAI audio transcription.
         """
         state = State(user_query=text, conversation_id=conversation_id)
         if conversation_id:
