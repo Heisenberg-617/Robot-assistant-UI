@@ -99,7 +99,7 @@ class LLMService:
             The navigation tool can resolve close matches and aliases, so still use it when the user gives an approximate name, synonym, or common alias.
             If the tool returns LOCATION_NOT_FOUND, explain that you could not find the destination and suggest valid options such as Administration, cafereria or health center.
             When using the navigation tool, only provide the place name as input with no extra text.
-            If a destination is found, tell the user to "Follow me to the destination name (translated to the conversation's language)". 
+            If a destination is found, tell the user to "Follow me to the (destination name ALWAYS translated to the conversation's language". 
             Always use the destination names translated to the conversation's language when talking to the user.
             Do not describe the route. Do not give coordinates or directions. Never expose coordinates to the user.
         """

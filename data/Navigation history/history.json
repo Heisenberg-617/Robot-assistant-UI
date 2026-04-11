@@ -893,5 +893,317 @@
                 "floor": "RDC"
             }
         }
+    },
+    {
+        "location": "Administration",
+        "matched_name": "Administration",
+        "category": "Administratif",
+        "date": "2026-04-11T15:50:26.783975+00:00",
+        "requested_by": "llm_agent",
+        "coordinates": {
+            "latitude": 40.7128,
+            "longitude": -74.006
+        },
+        "dispatch": {
+            "status": "placeholder",
+            "message": "Navigation command prepared. Connect ROBOT_NAVIGATION_API_URL to send it to ROS.",
+            "api_url": null,
+            "command_payload": {
+                "destination": "Administration",
+                "matched_name": "Administration",
+                "coordinates": {
+                    "latitude": 40.7128,
+                    "longitude": -74.006
+                },
+                "building": "Bâtiment Emines",
+                "floor": "RDC"
+            }
+        }
+    },
+    {
+        "location": "Centre de santé",
+        "matched_name": "Centre de santé",
+        "category": "Santé",
+        "date": "2026-04-11T15:51:50.855783+00:00",
+        "requested_by": "llm_agent",
+        "coordinates": {
+            "latitude": 40.7133,
+            "longitude": -74.0065
+        },
+        "dispatch": {
+            "status": "placeholder",
+            "message": "Navigation command prepared. Connect ROBOT_NAVIGATION_API_URL to send it to ROS.",
+            "api_url": null,
+            "command_payload": {
+                "destination": "Centre de santé",
+                "matched_name": "Centre de santé",
+                "coordinates": {
+                    "latitude": 40.7133,
+                    "longitude": -74.0065
+                },
+                "building": "Bâtiment Emines",
+                "floor": "RDC"
+            }
+        }
+    },
+    {
+        "location": "Centre de santé",
+        "matched_name": "Centre de santé",
+        "category": "Santé",
+        "date": "2026-04-11T15:53:58.004643+00:00",
+        "requested_by": "llm_agent",
+        "coordinates": {
+            "latitude": 40.7133,
+            "longitude": -74.0065
+        },
+        "dispatch": {
+            "status": "placeholder",
+            "message": "Navigation command prepared. Connect ROBOT_NAVIGATION_API_URL to send it to ROS.",
+            "api_url": null,
+            "command_payload": {
+                "destination": "Centre de santé",
+                "matched_name": "Centre de santé",
+                "coordinates": {
+                    "latitude": 40.7133,
+                    "longitude": -74.0065
+                },
+                "building": "Bâtiment Emines",
+                "floor": "RDC"
+            }
+        }
+    },
+    {
+        "location": "Centre de santé",
+        "matched_name": "Centre de santé",
+        "category": "Santé",
+        "date": "2026-04-11T15:58:40.806088+00:00",
+        "requested_by": "llm_agent",
+        "coordinates": {
+            "latitude": 40.7133,
+            "longitude": -74.0065
+        },
+        "dispatch": {
+            "status": "placeholder",
+            "message": "Navigation command prepared. Connect ROBOT_NAVIGATION_API_URL to send it to ROS.",
+            "api_url": null,
+            "command_payload": {
+                "destination": "Centre de santé",
+                "matched_name": "Centre de santé",
+                "coordinates": {
+                    "latitude": 40.7133,
+                    "longitude": -74.0065
+                },
+                "building": "Bâtiment Emines",
+                "floor": "RDC"
+            }
+        }
+    },
+    {
+        "location": "Administration",
+        "matched_name": "Administration",
+        "category": "Administratif",
+        "date": "2026-04-11T16:12:44.771948+00:00",
+        "requested_by": "llm_agent",
+        "coordinates": {
+            "latitude": 40.7128,
+            "longitude": -74.006
+        },
+        "dispatch": {
+            "status": "placeholder",
+            "message": "Navigation command prepared. Connect ROBOT_NAVIGATION_API_URL to send it to ROS.",
+            "api_url": null,
+            "command_payload": {
+                "destination": "Administration",
+                "matched_name": "Administration",
+                "coordinates": {
+                    "latitude": 40.7128,
+                    "longitude": -74.006
+                },
+                "building": "Bâtiment Emines",
+                "floor": "RDC"
+            }
+        }
+    },
+    {
+        "location": "Centre de santé",
+        "matched_name": "Centre de santé",
+        "category": "Santé",
+        "date": "2026-04-11T16:28:04.180175+00:00",
+        "requested_by": "llm_agent",
+        "coordinates": {
+            "latitude": 40.7133,
+            "longitude": -74.0065
+        },
+        "dispatch": {
+            "status": "placeholder",
+            "message": "Navigation command prepared. Connect ROBOT_NAVIGATION_API_URL to send it to ROS.",
+            "api_url": null,
+            "command_payload": {
+                "destination": "Centre de santé",
+                "matched_name": "Centre de santé",
+                "coordinates": {
+                    "latitude": 40.7133,
+                    "longitude": -74.0065
+                },
+                "building": "Bâtiment Emines",
+                "floor": "RDC"
+            }
+        }
+    },
+    {
+        "location": "Centre de santé",
+        "matched_name": "Centre de santé",
+        "category": "Santé",
+        "date": "2026-04-11T16:35:04.098533+00:00",
+        "requested_by": "llm_agent",
+        "coordinates": {
+            "latitude": 40.7133,
+            "longitude": -74.0065
+        },
+        "dispatch": {
+            "status": "placeholder",
+            "message": "Navigation command prepared. Connect ROBOT_NAVIGATION_API_URL to send it to ROS.",
+            "api_url": null,
+            "command_payload": {
+                "destination": "Centre de santé",
+                "matched_name": "Centre de santé",
+                "coordinates": {
+                    "latitude": 40.7133,
+                    "longitude": -74.0065
+                },
+                "building": "Bâtiment Emines",
+                "floor": "RDC"
+            }
+        }
+    },
+    {
+        "location": "Centre de santé",
+        "matched_name": "Centre de santé",
+        "category": "Santé",
+        "date": "2026-04-11T16:51:22.422906+00:00",
+        "requested_by": "llm_agent",
+        "coordinates": {
+            "latitude": 40.7133,
+            "longitude": -74.0065
+        },
+        "dispatch": {
+            "status": "placeholder",
+            "message": "Navigation command prepared. Connect ROBOT_NAVIGATION_API_URL to send it to ROS.",
+            "api_url": null,
+            "command_payload": {
+                "destination": "Centre de santé",
+                "matched_name": "Centre de santé",
+                "coordinates": {
+                    "latitude": 40.7133,
+                    "longitude": -74.0065
+                },
+                "building": "Bâtiment Emines",
+                "floor": "RDC"
+            }
+        }
+    },
+    {
+        "location": "Centre de santé",
+        "matched_name": "Centre de santé",
+        "category": "Santé",
+        "date": "2026-04-11T16:54:49.286064+00:00",
+        "requested_by": "llm_agent",
+        "coordinates": {
+            "latitude": 40.7133,
+            "longitude": -74.0065
+        },
+        "dispatch": {
+            "status": "placeholder",
+            "message": "Navigation command prepared. Connect ROBOT_NAVIGATION_API_URL to send it to ROS.",
+            "api_url": null,
+            "command_payload": {
+                "destination": "Centre de santé",
+                "matched_name": "Centre de santé",
+                "coordinates": {
+                    "latitude": 40.7133,
+                    "longitude": -74.0065
+                },
+                "building": "Bâtiment Emines",
+                "floor": "RDC"
+            }
+        }
+    },
+    {
+        "location": "Centre de santé",
+        "matched_name": "Centre de santé",
+        "category": "Santé",
+        "date": "2026-04-11T17:00:59.147352+00:00",
+        "requested_by": "llm_agent",
+        "coordinates": {
+            "latitude": 40.7133,
+            "longitude": -74.0065
+        },
+        "dispatch": {
+            "status": "placeholder",
+            "message": "Navigation command prepared. Connect ROBOT_NAVIGATION_API_URL to send it to ROS.",
+            "api_url": null,
+            "command_payload": {
+                "destination": "Centre de santé",
+                "matched_name": "Centre de santé",
+                "coordinates": {
+                    "latitude": 40.7133,
+                    "longitude": -74.0065
+                },
+                "building": "Bâtiment Emines",
+                "floor": "RDC"
+            }
+        }
+    },
+    {
+        "location": "Centre de santé",
+        "matched_name": "Centre de santé",
+        "category": "Santé",
+        "date": "2026-04-11T17:16:28.941172+00:00",
+        "requested_by": "llm_agent",
+        "coordinates": {
+            "latitude": 40.7133,
+            "longitude": -74.0065
+        },
+        "dispatch": {
+            "status": "placeholder",
+            "message": "Navigation command prepared. Connect ROBOT_NAVIGATION_API_URL to send it to ROS.",
+            "api_url": null,
+            "command_payload": {
+                "destination": "Centre de santé",
+                "matched_name": "Centre de santé",
+                "coordinates": {
+                    "latitude": 40.7133,
+                    "longitude": -74.0065
+                },
+                "building": "Bâtiment Emines",
+                "floor": "RDC"
+            }
+        }
+    },
+    {
+        "location": "Cafétéria",
+        "matched_name": "Cafétéria",
+        "category": "Alimentation",
+        "date": "2026-04-11T17:28:48.838828+00:00",
+        "requested_by": "llm_agent",
+        "coordinates": {
+            "latitude": 40.7132,
+            "longitude": -74.0064
+        },
+        "dispatch": {
+            "status": "placeholder",
+            "message": "Navigation command prepared. Connect ROBOT_NAVIGATION_API_URL to send it to ROS.",
+            "api_url": null,
+            "command_payload": {
+                "destination": "Cafétéria",
+                "matched_name": "Cafétéria",
+                "coordinates": {
+                    "latitude": 40.7132,
+                    "longitude": -74.0064
+                },
+                "building": "Bâtiment Emines",
+                "floor": "RDC"
+            }
+        }
     }
 ]
