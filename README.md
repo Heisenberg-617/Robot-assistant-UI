@@ -1,6 +1,6 @@
 # Robot Assistant Chatbot
 
-A Streamlit-based campus robot assistant UI for the EMINES 2027 robotics project. This project combines conversational AI, voice interaction, document retrieval, and navigation support into a single local UI.
+A Streamlit-based campus robot assistant UI for robotics project. This project combines conversational AI, voice interaction, document retrieval, and navigation support into a single local UI.
 
 ## What this project does
 
